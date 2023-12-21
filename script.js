@@ -213,10 +213,21 @@ input.addEventListener('input', function() {
         box.style.width = '200px';
         box.style.height = '300px';
         box.style.display = 'flex';
+        box.style.paddingBottom = '10px';
+        box.style.borderRadius = '10px';
         box.style.justifyContent = 'center';
         box.style.alignItems = 'end';
         // box.style.background = 'cover no-repeat center url(".https://martstroy.ru/images/shop/product/780af87be75f30029d2eddbe06b894a3.jpg")';
         box.style.backgroundColor = 'blue'
         result.appendChild(box);
+        if (input.value === '') {
+            result.textContent = '';
+            let no_items = document.createElement('p');
+            no_items.textContent = 'There is not countries in your result'
+            no_items.style.margin = '0 auto';
+            no_items.style.textAlign = 'center';
+            no_items.style.fontSize = '24px';
+            result.appendChild(no_items)
+        }
     });
 });
